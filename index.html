@@ -311,7 +311,7 @@
           </span>
         </h2>
         <div class="contact__form-container">
-          <form action="#" class="contact__form">
+          <form class="contact__form" netlify>
             <div class="contact__form-field">
               <label class="contact__form-label" for="name">Name</label>
               <input
@@ -415,35 +415,5 @@
     </footer>
 
     <script src="./index.js"></script>
-    <script
-      type="text/javascript"
-      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
-    ></script>
-    <script type="text/javascript">
-      (function () {
-        // https://dashboard.emailjs.com/admin/account
-        emailjs.init({
-          publicKey: "051QZTjuInPjHkOww",
-        });
-      })();
-    </script>
-    <script type="text/javascript">
-      window.onload = function () {
-        document
-          .querySelector(".contact__form")
-          .addEventListener("submit", function (event) {
-            event.preventDefault();
-            // these IDs from the previous steps
-            emailjs.sendForm("contact_service", "contact_form", this).then(
-              () => {
-                console.log("SUCCESS!");
-              },
-              (error) => {
-                console.log("FAILED...", error);
-              }
-            );
-          });
-      };
-    </script>
   </body>
 </html>
